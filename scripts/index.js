@@ -1,7 +1,7 @@
 //global variables go here
 var eqDisplay;
 var mainDisplay;
-var done;
+var done = false;
 
 function initialSetup(){
     //sets two main output display variables
@@ -63,7 +63,7 @@ function backspace(){
 function calculate(){
     //only runs if main display is not blank
     var number = mainDisplay.innerText;
-    if (number != ""){
+    if (number != "" && done==false){
         console.clear();
         eqDisplay.innerText += " "+number;
         var eq = eqDisplay.innerText;
@@ -114,34 +114,34 @@ function calculate(){
         }
         
         //set main display to answer
+        if(eqElems[0]==Infinity){
+            eqElems[0]="Compute Nicely..."
+        }
         mainDisplay.innerText = eqElems[0];
         done = true;
     }
 }
 
-function parseEq(eq){
-}
-
 function multiply(x,y){
-    x = parseInt(x);
-    y = parseInt(y);
+    x = parseFloat(x);
+    y = parseFloat(y);
     return x*y;
 }
 
 function divide(x,y){
-    x = parseInt(x);
-    y = parseInt(y);
+    x = parseFloat(x);
+    y = parseFloat(y);
     return x/y;
 }
 
 function add(x,y){
-    x = parseInt(x);
-    y = parseInt(y);
+    x = parseFloat(x);
+    y = parseFloat(y);
     return x+y;
 }
 
 function subtract(x,y){
-    x = parseInt(x);
-    y = parseInt(y);
+    x = parseFloat(x);
+    y = parseFloat(y);
     return x-y;
 }
