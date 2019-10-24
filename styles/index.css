@@ -32,11 +32,11 @@ h1{
     padding: 10px;
 }
 
-#equation {
+#eqDisplay {
     height: 20px;
 }
 
-#input {
+#mainDisplay {
     height: 40px;
     font-size: 24pt;
     font-weight: 50;
