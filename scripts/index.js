@@ -34,7 +34,7 @@ function initialSetup(){
     }
 
     //reset displays
-    clears();
+    clearAll();
 }
 
 //run these function on window.load()
@@ -42,7 +42,13 @@ window.addEventListener('load', function () {
     initialSetup();
 })
 
-function clears(){
+function clearAll(){
     eqDisplay.innerText = "";
     mainDisplay.innerText = "";
+}
+
+function backspace(){
+    var disp = mainDisplay.innerText;
+    disp = disp.substring(0,disp.length-1);
+    mainDisplay.innerText = disp;
 }

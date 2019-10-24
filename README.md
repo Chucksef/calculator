@@ -15,5 +15,6 @@ v 0.9 - Answer rounding/readout overflow
 v 1.0 - working basic calculator that can add, subtract, multiply and divide integers
 v 1.1 - Decimal button functionality
 v 1.3 - Intuitive and Attractive UI
+v 1.4 - Extend backspace support to Equation readout
 v 1.5 - Keyboard support
 v 2.0 - Responsive Layout to support mobile
