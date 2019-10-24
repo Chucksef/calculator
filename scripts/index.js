@@ -24,16 +24,28 @@ function initialSetup(){
 
     //get all operator buttons
     var operatorButtons = Array.from(document.querySelectorAll("button.operator"));
-    //attach an onClick event listener to each input button
+
+    //attach an onClick event listener to each operator button
     for(i=0;i<operatorButtons.length;i++){
         operatorButtons[i].addEventListener("click", function(e) {
             //get clicked button's inner text and append it to the main display
-            var operation = ` ${e.target.innerText}`;
-            var number = mainDisplay.innerText;
-            if (number != ""){
-                eqDisplay.innerText += " "+number;
-                eqDisplay.innerText += operation;
-                mainDisplay.innerText = "";
+            if(!done){
+                var operation = ` ${e.target.innerText}`;
+                var number = mainDisplay.innerText;
+                if (number != ""){
+                    eqDisplay.innerText += " "+number;
+                    eqDisplay.innerText += operation;
+                    mainDisplay.innerText = "";
+                }
+            } else {
+                var operation = ` ${e.target.innerText}`;
+                var number = mainDisplay.innerText;
+                if (number != ""){
+                    eqDisplay.innerText = number.replace(/,/g,"");
+                    eqDisplay.innerText += operation;
+                    mainDisplay.innerText = "";
+                }
+                done=false;
             }
         })
     }
@@ -114,10 +126,15 @@ function calculate(){
         }
         
         //set main display to answer
-        if(eqElems[0]==Infinity){
-            eqElems[0]="Compute Nicely..."
+        var answer = eqElems[0]
+        if(answer==Infinity){
+            answer="Compute Nicely..."
         }
-        mainDisplay.innerText = eqElems[0];
+        
+        //make sure answer is no longer than 12 digits incl decimal
+        answer = answer.toString().substring(0,15);
+        answer = insertCommas(answer);
+        mainDisplay.innerText = answer;
         done = true;
     }
 }
@@ -144,4 +161,45 @@ function subtract(x,y){
     x = parseFloat(x);
     y = parseFloat(y);
     return x-y;
+}
+
+//inserts commas where they should go, even with negatives or floats
+function insertCommas(num){
+    var numLeft = num.toString();
+    var numRight;
+    var neg=false;
+    if(numLeft.includes(".")){
+        numRight = numLeft.split(".")[1];
+        numLeft = numLeft.split(".")[0];
+    }
+
+    //checks if negative. If so, temporarily removes "-" sign
+    if(numLeft.includes("-")){
+        neg=true;
+        numLeft = numLeft.replace("-","");
+    }
+
+    //iterates over numLeft and inserts commas Right-to-Left in separate variable
+    var answer = "";
+    for(i=0;i<numLeft.length;i++){
+        var insert = numLeft[numLeft.length-(i+1)]
+        if(i%3==0 && i>0){
+            insert += ",";
+        }
+        answer = insert+answer;
+    }
+
+    // //remvoes final comma
+    // answer = answer.substring(0,answer.length-1);
+
+    //adds float info back on.
+    if(numRight != undefined){
+        answer += `.${numRight}`;
+    }
+
+    //adds back on negative sign if needed
+    if(neg){
+        answer = `-${answer}`;
+    }
+    return answer;
 }

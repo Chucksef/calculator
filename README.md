@@ -10,10 +10,9 @@ v 0.5 - Clear button functionality
 v 0.6 - Backspace button functionality
 v 0.7 - Equation evaluation (Equals button functionality)
 v 0.8 - Equation validation and Error Handling
--------------------------------------------------------------
-
 v 1.0 - Answer rounding/readout overflow.
-        Initial development complete. Works as expected and can add, subtract, multiply and divide integers.
+        Initial development complete. Works as user would expect (can add, subtract, multiply and divide integers).
+-------------------------------------------------------------
 v 1.1 - Decimal button functionality
 v 1.3 - Intuitive and Attractive UI
 v 1.4 - Extend backspace support to Equation readout
