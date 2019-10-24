@@ -18,7 +18,11 @@ function initialSetup(){
                 clearAll();
                 done=false;
             }
-            mainDisplay.innerText += e.target.innerText;
+            if(mainDisplay.innerText==""&&e.target.innerText=="."){
+            } else if (mainDisplay.innerText.includes(".")&&e.target.innerText==".") {
+            } else {
+                mainDisplay.innerText += e.target.innerText;
+            }
         })
     }
 
