@@ -34,11 +34,15 @@ function initialSetup(){
     }
 
     //reset displays
-    eqDisplay.innerText="";
-    mainDisplay.innerText="";
+    clears();
 }
 
 //run these function on window.load()
 window.addEventListener('load', function () {
     initialSetup();
 })
+
+function clears(){
+    eqDisplay.innerText = "";
+    mainDisplay.innerText = "";
+}

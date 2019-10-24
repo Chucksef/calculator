@@ -7,13 +7,13 @@ v 0.2 - Bare bones of CSS styling to make using application slightly less awful
 v 0.3 - Number button / main readout functionality
 v 0.4 - Operator Buttons / Equation Display (second display that shows the current equation to be run)
 v 0.5 - Clear button functionality
-v 0.6 - Equation evaluation (Equals button functionality)
-v 0.7 - Equation validation
-v 0.8 - Answer rounding/overflow
+v 0.6 - Backspace button functionality
+v 0.7 - Equation evaluation (Equals button functionality)
+v 0.8 - Equation validation
+v 0.9 - Answer rounding/readout overflow
 
 v 1.0 - working basic calculator that can add, subtract, multiply and divide integers
 v 1.1 - Decimal button functionality
-v 1.2 - Backspace button functionality
 v 1.3 - Intuitive and Attractive UI
 v 1.5 - Keyboard support
 v 2.0 - Responsive Layout to support mobile
