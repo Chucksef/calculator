@@ -1,4 +1,69 @@
 body{
-    background-color: rgb(42, 42, 48);
+    background-color: rgb(28, 28, 31);
     color: rgb(218, 212, 167);
+}
+
+#main{
+    width: 300px;
+    height: 540px;
+    background-color: rgb(42, 42, 48);
+    border-color: rgb(59, 59, 71);
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+hr{
+    border-color: rgb(218,212,167);
+    margin: 10px 0px;
+}
+
+h1{
+    font-family: sans-serif;
+}
+
+.readout {
+    width: 100%-20px;
+    background-color: rgb(59, 59, 71);
+    margin: 5px 0px;
+    font-family: sans-serif;
+    text-align: right;
+    padding: 10px;
+}
+
+#equation {
+    height: 20px;
+}
+
+#input {
+    height: 40px;
+    font-size: 24pt;
+    font-weight: 50;
+}
+
+#interface {
+    height: 312px;
+    background-color:rgb(59, 59, 71);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+
+button {
+    font-size: 16pt;
+}
+
+#zero{
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 5;
+    grid-row-end: 5;
+}
+
+#enter{
+    grid-column: 4;
+    grid-row: 4 / span 2;
 }
